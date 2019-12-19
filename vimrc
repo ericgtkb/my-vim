@@ -12,6 +12,9 @@ set cursorline
 set wildmenu
 set showmatch
 
+" Dealing with the delay of <Esc> O
+set timeout timeoutlen=5000 ttimeoutlen=100
+
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
