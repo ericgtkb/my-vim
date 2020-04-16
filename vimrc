@@ -9,6 +9,7 @@ set shiftwidth=4
 set autoindent
 set showcmd
 set cursorline
+set cursorcolumn
 set wildmenu
 set showmatch
 
