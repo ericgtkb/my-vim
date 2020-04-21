@@ -11,6 +11,14 @@ set showcmd
 set wildmenu
 set showmatch
 
+set clipboard=unnamed
+
+filetype indent plugin on
+
+" Enable omni completion
+set omnifunc=syntaxcomplete#Complete
+
+
 " Dealing with the delay of <Esc> O
 set timeout timeoutlen=5000 ttimeoutlen=100
 
