@@ -18,6 +18,8 @@ filetype indent plugin on
 " Enable omni completion
 set omnifunc=syntaxcomplete#Complete
 
+" Make backspace work like other programs
+set backspace=indent,eol,start
 
 " Dealing with the delay of <Esc> O
 set timeout timeoutlen=5000 ttimeoutlen=100
