@@ -47,24 +47,51 @@ noremap! <Left> <Nop>
 noremap! <Right> <Nop>
 
 " Simple implementation for pair completion
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
+function! PairCompOn()
+    inoremap {      {}<Left>
+    inoremap {<CR>  {<CR>}<Esc>O
+    inoremap {{     {
+    inoremap {}     {}
 
-inoremap (      ()<Left>
-inoremap (<CR>  (<CR>)<Esc>O
-inoremap ((     (
-inoremap ()     ()
+    inoremap (      ()<Left>
+    inoremap (<CR>  (<CR>)<Esc>O
+    inoremap ((     (
+    inoremap ()     ()
 
-inoremap [      []<Left>
-inoremap [<CR>  [<CR>]<Esc>O
-inoremap [[     [
-inoremap []     []
+    inoremap [      []<Left>
+    inoremap [<CR>  [<CR>]<Esc>O
+    inoremap [[     [
+    inoremap []     []
 
-inoremap '      ''<Left>
-inoremap ''     ''
+    inoremap '      ''<Left>
+    inoremap ''     ''
 
-inoremap "      ""<Left>
-inoremap ""     ""
+    inoremap "      ""<Left>
+    inoremap ""     ""
+endfunction
 
+" Turn off pair completion
+function! PairCompOff()
+    iunmap {
+    iunmap {<CR>
+    iunmap {{
+    iunmap {}
+
+    iunmap (
+    iunmap (<CR>
+    iunmap ((
+    iunmap ()
+
+    iunmap [
+    iunmap [<CR>
+    iunmap [[
+    iunmap []
+
+    iunmap '
+    iunmap ''
+
+    iunmap "
+    iunmap ""
+endfunction
+
+call PairCompOn()
