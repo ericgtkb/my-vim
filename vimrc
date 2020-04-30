@@ -11,6 +11,10 @@ set showcmd
 set wildmenu
 set showmatch
 
+"Default split direction
+set splitbelow
+set splitright
+
 set clipboard=unnamed
 
 filetype indent plugin on
@@ -24,12 +28,13 @@ set backspace=indent,eol,start
 " Dealing with the delay of <Esc> O
 set timeout timeoutlen=5000 ttimeoutlen=100
 
-
 set cursorline
 set cursorcolumn
+set colorcolumn=80
 
 hi CursorLine cterm=NONE ctermbg=235
 hi CursorColumn cterm=NONE ctermbg=235
+hi ColorColumn cterm=NONE ctermbg=240
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -95,3 +100,4 @@ function! PairCompOff()
 endfunction
 
 call PairCompOn()
+
