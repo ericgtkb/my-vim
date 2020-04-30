@@ -45,3 +45,26 @@ noremap! <Up> <Nop>
 noremap! <Down> <Nop>
 noremap! <Left> <Nop>
 noremap! <Right> <Nop>
+
+" Simple implementation for pair completion
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+
+inoremap (      ()<Left>
+inoremap (<CR>  (<CR>)<Esc>O
+inoremap ((     (
+inoremap ()     ()
+
+inoremap [      []<Left>
+inoremap [<CR>  [<CR>]<Esc>O
+inoremap [[     [
+inoremap []     []
+
+inoremap '      ''<Left>
+inoremap ''     ''
+
+inoremap "      ""<Left>
+inoremap ""     ""
+
