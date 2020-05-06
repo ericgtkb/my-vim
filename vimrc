@@ -30,7 +30,7 @@ set timeout timeoutlen=5000 ttimeoutlen=100
 
 set cursorline
 set cursorcolumn
-set colorcolumn=80
+set colorcolumn=80,120
 
 hi CursorLine cterm=NONE ctermbg=235
 hi CursorColumn cterm=NONE ctermbg=235
