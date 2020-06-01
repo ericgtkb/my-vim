@@ -3,15 +3,21 @@ set number
 set relativenumber
 set incsearch
 set hlsearch
+
+" Tab options
 set expandtab
 set tabstop=4
 set shiftwidth=4
+
 set autoindent
 set showcmd
 set wildmenu
 set showmatch
 
-"Default split direction
+" No wrap
+set nowrap
+
+" Default split direction
 set splitbelow
 set splitright
 
