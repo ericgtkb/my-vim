@@ -14,6 +14,10 @@ call vundle#end()
 filetype plugin indent on
 " End Vundle setup
 
+" YCM setup
+let g:ycm_auto_trigger=1
+" End YCM setup"
+
 syntax on
 set number
 set relativenumber
