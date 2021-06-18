@@ -1,3 +1,19 @@
+" Vundle setup
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" Let Vundle manage Vundle
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'ycm-core/YouCompleteMe'
+
+call vundle#end()
+filetype plugin indent on
+" End Vundle setup
+
 syntax on
 set number
 set relativenumber
@@ -23,7 +39,6 @@ set splitright
 
 set clipboard=unnamed
 
-filetype indent plugin on
 
 " Enable omni completion
 set omnifunc=syntaxcomplete#Complete
@@ -42,10 +57,17 @@ hi CursorLine cterm=NONE ctermbg=235
 hi CursorColumn cterm=NONE ctermbg=235
 hi ColorColumn cterm=NONE ctermbg=240
 
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" netrw tree view as default"
+let g:netrw_liststyle= 3
+
+" Custom commands
+" File explore
+command Vfs topleft Vexplore | vert resize 40
+
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 
 noremap <Up> <Nop>
 noremap <Down> <Nop>
@@ -106,4 +128,5 @@ function! PairCompOff()
 endfunction
 
 call PairCompOn()
+
 
