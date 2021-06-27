@@ -26,6 +26,9 @@ Plugin 'raimondi/delimitmate'
 " Ariline
 Plugin 'vim-airline/vim-airline'
 
+" Color schemes
+Plugin 'flazz/vim-colorschemes'
+
 " NerdTree, gitgutter, fugitive??
 
 call vundle#end()
@@ -47,7 +50,7 @@ let g:syntastic_check_on_wq = 0
 
 " Use YCM for java
 let g:syntastic_java_checkers = []
-let g:syntastic_python_checkers = ['pep8']
+let g:syntastic_python_checkers = ['flake8']
 " End Syntastic settings
 
 " YCM settings
@@ -98,6 +101,7 @@ set splitright
 
 set clipboard=unnamed
 
+set termwinsize=15x0
 
 " Enable omni completion
 set omnifunc=syntaxcomplete#Complete
@@ -108,14 +112,16 @@ set backspace=indent,eol,start
 " Dealing with the delay of <Esc> O
 set timeout timeoutlen=5000 ttimeoutlen=100
 
-colorscheme industry
+colorscheme darkglass
 
 set cursorline
 set cursorcolumn
 set colorcolumn=80,120
 
-hi CursorLine cterm=NONE ctermbg=235
-hi CursorColumn cterm=NONE ctermbg=235
+set t_Co=256
+
+hi CursorLine cterm=NONE ctermbg=233
+hi CursorColumn cterm=NONE ctermbg=233
 hi ColorColumn cterm=NONE ctermbg=240
 
 " netrw tree view as default"
@@ -123,11 +129,20 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
-let g:netrw_winsize = 30
+let g:netrw_winsize = 20
 
 " Custom commands
 " File explore
-command Vfs topleft Vexplore
+command! Vfs topleft Vexplore
+
+" Remaps
+nnoremap <Leader>hl :set hlsearch<CR>
+nnoremap <Leader>nhl :set nohlsearch<CR>
+nnoremap <Leader>ic :set ignorecase<CR>
+nnoremap <Leader>nic :set noignorecase<CR>
+nnoremap <Leader>* *N
+nnoremap <Leader># #N
+
 
 " No arrow keys
 noremap <Up> <Nop>
@@ -139,55 +154,4 @@ noremap! <Up> <Nop>
 noremap! <Down> <Nop>
 noremap! <Left> <Nop>
 noremap! <Right> <Nop>
-
-" Simple implementation for pair completion
-function! PairCompOn()
-    inoremap {      {}<Left>
-    inoremap {<CR>  {<CR>}<Esc>O
-    inoremap {{     {
-    inoremap {}     {}
-
-    inoremap (      ()<Left>
-    inoremap (<CR>  (<CR>)<Esc>O
-    inoremap ((     (
-    inoremap ()     ()
-
-    inoremap [      []<Left>
-    inoremap [<CR>  [<CR>]<Esc>O
-    inoremap [[     [
-    inoremap []     []
-
-    inoremap '      ''<Left>
-    inoremap ''     ''
-
-    inoremap "      ""<Left>
-    inoremap ""     ""
-endfunction
-
-" Turn off pair completion
-function! PairCompOff()
-    iunmap {
-    iunmap {<CR>
-    iunmap {{
-    iunmap {}
-
-    iunmap (
-    iunmap (<CR>
-    iunmap ((
-    iunmap ()
-
-    iunmap [
-    iunmap [<CR>
-    iunmap [[
-    iunmap []
-
-    iunmap '
-    iunmap ''
-
-    iunmap "
-    iunmap ""
-endfunction
-
-" call PairCompOn()
-
 

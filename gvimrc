@@ -1,4 +1,4 @@
-colorscheme koehler
+colorscheme darkglass
 
 if has('unix')
     if has('mac')
