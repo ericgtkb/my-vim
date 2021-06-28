@@ -29,8 +29,6 @@ Plugin 'vim-airline/vim-airline'
 " Color schemes
 Plugin 'flazz/vim-colorschemes'
 
-" NerdTree, gitgutter, fugitive??
-
 call vundle#end()
 filetype plugin indent on
 " End Vundle setup
