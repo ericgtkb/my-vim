@@ -8,7 +8,7 @@ call vundle#begin()
 " Let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 
-" Synastic
+" Syntastic
 Plugin 'vim-syntastic/syntastic'
 
 " YouCompleteMe
@@ -23,11 +23,14 @@ Plugin 'tpope/vim-repeat'
 " Pair insertion
 Plugin 'raimondi/delimitmate'
 
-" Ariline
+" Airline
 Plugin 'vim-airline/vim-airline'
 
 " Color schemes
 Plugin 'flazz/vim-colorschemes'
+
+" Python syntax
+Plugin 'vim-python/python-syntax'
 
 call vundle#end()
 filetype plugin indent on
@@ -49,6 +52,10 @@ let g:syntastic_check_on_wq = 0
 " Use YCM for java
 let g:syntastic_java_checkers = []
 let g:syntastic_python_checkers = ['flake8']
+" Syntastic mappings
+nnoremap <Leader>stm :SyntasticToggleMode<CR>
+nnoremap <Leader>sc :SyntasticCheck<CR>
+nnoremap <Leader>sr :SyntasticReset<CR>
 " End Syntastic settings
 
 " YCM settings
@@ -68,7 +75,11 @@ nnoremap <Leader>yoi :YcmCompleter OrganizeImports<CR>
 let g:delimitMate_expand_cr = 1
 " End DelimitMate settings
 
-" End pulgin settings
+" Python syntax settings
+let g:python_highlight_all = 1
+" End Python syntax settings
+
+" End plugin settings
 
 
 
@@ -133,6 +144,13 @@ let g:netrw_winsize = 20
 " File explore
 command! Vfs topleft Vexplore
 
+" Auto commands
+" Restore cursor position
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$")
+  \ |   exe "normal! g`\""
+  \ | endif
+
 " Remaps
 nnoremap <Leader>hl :set hlsearch<CR>
 nnoremap <Leader>nhl :set nohlsearch<CR>
@@ -140,7 +158,8 @@ nnoremap <Leader>ic :set ignorecase<CR>
 nnoremap <Leader>nic :set noignorecase<CR>
 nnoremap <Leader>* *N
 nnoremap <Leader># #N
-
+" Remove trailing whitespace
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
 " No arrow keys
 noremap <Up> <Nop>
