@@ -147,9 +147,9 @@ command! Vfs topleft Vexplore
 " Auto commands
 " Restore cursor position
 autocmd BufReadPost *
-  \ if line("'\"") >= 1 && line("'\"") <= line("$")
-  \ |   exe "normal! g`\""
-  \ | endif
+    \ if line("'\"") >= 1 && line("'\"") <= line("$")
+    \ |   execute "normal! g`\""
+    \ | endif
 
 " Remaps
 nnoremap <Leader>hl :set hlsearch<CR>
