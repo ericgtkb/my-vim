@@ -13,7 +13,7 @@ command! -nargs=1 ECHeaderGaurd let b:header_name = toupper(<q-args>) |
 
 nnoremap <Leader>hg :ECHeaderGaurd 
 
-" Prevent cpp files from loading c only stuff
+" Prevent cpp files from loading c only stuff.
 if (&ft != 'c')
     finish
 endif

@@ -110,7 +110,7 @@ set splitright
 
 set clipboard=unnamed
 
-set termwinsize=15x0
+set termwinsize=15*0
 
 " Enable omni completion
 set omnifunc=syntaxcomplete#Complete
