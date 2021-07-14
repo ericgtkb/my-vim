@@ -156,6 +156,8 @@ nnoremap <Leader>hl :set hlsearch<CR>
 nnoremap <Leader>nhl :set nohlsearch<CR>
 nnoremap <Leader>ic :set ignorecase<CR>
 nnoremap <Leader>nic :set noignorecase<CR>
+nnoremap <Leader>num :set number relativenumber<CR>
+nnoremap <Leader>nnum :set nonumber norelativenumber<CR>
 nnoremap <Leader>* *N
 nnoremap <Leader># #N
 " Remove trailing whitespace
