@@ -107,6 +107,8 @@ set nowrap
 " Default split direction
 set splitbelow
 set splitright
+" No resizing after closing a split
+set noequalalways
 
 set clipboard=unnamed
 
