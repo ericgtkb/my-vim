@@ -5,3 +5,5 @@ let b:loaded_ec_java_plugin = 1
 
 " main method, assuming delimitMate is on
 iabbrev <buffer> main! public static void main(String[] args) {<CR>
+iabbrev <buffer> pr! System.out.print(
+iabbrev <buffer> pl! System.out.println(

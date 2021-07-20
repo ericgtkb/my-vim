@@ -75,6 +75,11 @@ nnoremap <Leader>yoi :YcmCompleter OrganizeImports<CR>
 let g:delimitMate_expand_cr = 1
 " End DelimitMate settings
 
+" Java syntax settings
+let g:java_highlight_all = 1
+" let g:java_highlight_functions = 1
+" End Java syntax settings
+"
 " Python syntax settings
 let g:python_highlight_all = 1
 " End Python syntax settings
@@ -123,7 +128,7 @@ set backspace=indent,eol,start
 " Dealing with the delay of <Esc> O
 set timeout timeoutlen=5000 ttimeoutlen=100
 
-colorscheme darkglass
+colorscheme lettuce
 
 set cursorline
 set cursorcolumn
@@ -138,13 +143,11 @@ hi ColorColumn cterm=NONE ctermbg=240
 " netrw tree view as default"
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
+let g:netrw_browse_split = 0
 let g:netrw_altv = 1
+let g:netrw_alto = 0
+let g:netrw_preview = 1
 let g:netrw_winsize = 20
-
-" Custom commands
-" File explore
-command! Vfs topleft Vexplore
 
 " Auto commands
 " Restore cursor position
