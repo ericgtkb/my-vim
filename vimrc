@@ -61,10 +61,12 @@ nnoremap <Leader>sr :SyntasticReset<CR>
 " YCM settings
 let g:ycm_auto_trigger = 1
 let g:ycm_goto_buffer_command = 'new-tab' 
+let g:ycm_always_populate_location_list = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " YCM mappings
 nnoremap <Leader>yg :YcmCompleter GoTo<CR>
+nnoremap <Leader>yf :YcmCompleter FixIt<CR>
 nnoremap <Leader>ydoc :YcmCompleter GetDoc<CR>
 nnoremap <Leader>yrr :YcmCompleter RefactorRename<Space>
 " Java only
@@ -103,6 +105,9 @@ set shiftwidth=4
 
 set autoindent
 set showcmd
+
+" Bash-like autocomplete
+set wildmode=longest,list
 set wildmenu
 set showmatch
 
