@@ -29,6 +29,9 @@ Plugin 'vim-airline/vim-airline'
 " Color schemes
 Plugin 'flazz/vim-colorschemes'
 
+" C++ syntax
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
 " Python syntax
 Plugin 'vim-python/python-syntax'
 
@@ -81,7 +84,18 @@ let g:delimitMate_expand_cr = 1
 let g:java_highlight_all = 1
 " let g:java_highlight_functions = 1
 " End Java syntax settings
-"
+
+" C++ syntax settings
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+" Better but slower
+" let g:cpp_experimental_simple_template_highlight = 1
+" Faster but doesn't work in some cases
+let g:cpp_experimental_template_highlight = 1
+" End C++ syntax settings
+
 " Python syntax settings
 let g:python_highlight_all = 1
 " End Python syntax settings
@@ -109,6 +123,8 @@ set showcmd
 " Bash-like autocomplete
 set wildmode=longest,list
 set wildmenu
+set nowildignorecase
+set nofileignorecase
 set showmatch
 
 " No wrap
