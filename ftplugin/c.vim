@@ -9,7 +9,8 @@ set cinoptions+=E-s
 
 command! -nargs=1 ECHeaderGaurd let b:header_name = toupper(<q-args>) |
     \ execute "normal! ggi#ifndef " . b:header_name . "\<CR>#define "
-    \ . b:header_name . "<CR>\<Esc>Go\<Esc>o#endif  // " . b:header_name . "\<Esc>"
+    \ . b:header_name . "\<CR>\<Esc>Go\<Esc>o#endif  // "
+    \ . b:header_name . "\<Esc>"
 
 nnoremap <Leader>hg :ECHeaderGaurd 
 
