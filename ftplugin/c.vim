@@ -4,8 +4,8 @@ endif
 let b:loaded_ec_c_plugin = 1
 
 " Common stuff for both c and cpp files
-" No indent for extern C or C++
-set cinoptions+=E-s
+" No indent for extern C or C++, case indent with braces
+set cinoptions+=E-s,l1
 
 command! -nargs=1 ECHeaderGaurd let b:header_name = toupper(<q-args>) |
     \ execute "normal! ggi#ifndef " . b:header_name . "\<CR>#define "

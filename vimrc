@@ -54,7 +54,10 @@ let g:syntastic_check_on_wq = 0
 
 " Use YCM for java
 let g:syntastic_java_checkers = []
-let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_python_checkers = ['flake8', 'mypy']
+let g:syntastic_python_flake8_args = '--ignore=E501,W503'
+let g:syntastic_python_mypy_args = '--ignore-missing-imports'
+let g:syntastic_aggregate_errors = 1
 " Syntastic mappings
 nnoremap <Leader>stm :SyntasticToggleMode<CR>
 nnoremap <Leader>sc :SyntasticCheck<CR>
@@ -68,6 +71,8 @@ let g:ycm_always_populate_location_list = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " YCM mappings
+nnoremap <Leader>yon :let g:ycm_show_diagnostics_ui = 1 \| set signcolumn=auto \| YcmRestartServer<CR>:e<CR>
+nnoremap <Leader>yoff :let g:ycm_show_diagnostics_ui = 0 \| set signcolumn=no \| YcmRestartServer<CR>:e<CR>
 nnoremap <Leader>yg :YcmCompleter GoTo<CR>
 nnoremap <Leader>yf :YcmCompleter FixIt<CR>
 nnoremap <Leader>ydoc :YcmCompleter GetDoc<CR>
@@ -138,6 +143,10 @@ set noequalalways
 
 set clipboard=unnamed
 
+" Disable mouse
+set mouse=
+set ttymouse=
+
 set termwinsize=15*0
 
 " Enable omni completion
@@ -188,6 +197,10 @@ nnoremap <Leader>* *N
 nnoremap <Leader># #N
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+" Spelling check
+nnoremap <Leader>spe :spell<CR>
+nnoremap <Leader>nspe :nospell<CR>
+
 
 " No arrow keys
 noremap <Up> <Nop>

@@ -3,6 +3,8 @@ if exists("b:loaded_ec_python_plugin")
 endif
 let b:loaded_ec_python_plugin = 1
 
+let g:pyindent_open_paren = '&sw'
+
 " main function and if main guard
 iabbrev <buffer> main! def main():<CR>pass<CR><CR><CR>if __name__ == '__main__':<CR>main()
 
