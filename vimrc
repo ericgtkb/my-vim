@@ -143,9 +143,9 @@ set noequalalways
 
 set clipboard=unnamed
 
-" Disable mouse
-set mouse=
-set ttymouse=
+" Whether to disable mouse
+set mouse=a
+" set ttymouse=
 
 set termwinsize=15*0
 
