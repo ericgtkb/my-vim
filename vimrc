@@ -35,6 +35,12 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 " Python syntax
 Plugin 'vim-python/python-syntax'
 
+" Javascript
+Plugin 'pangloss/vim-javascript'
+
+" Python syntax
+Plugin 'maxmellon/vim-jsx-pretty'
+
 call vundle#end()
 filetype plugin indent on
 " End Vundle setup
@@ -108,7 +114,6 @@ let g:python_highlight_all = 1
 " End plugin settings
 
 
-
 " My settings
 syntax on
 set number
@@ -119,8 +124,9 @@ set encoding=utf-8
 
 " Tab options
 set expandtab
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 set autoindent
 set showcmd
@@ -141,11 +147,11 @@ set splitright
 " No resizing after closing a split
 set noequalalways
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 " Whether to disable mouse
-set mouse=a
-" set ttymouse=
+set mouse=
+set ttymouse=
 
 set termwinsize=15*0
 
@@ -186,6 +192,9 @@ autocmd BufReadPost *
     \ |   execute "normal! g`\""
     \ | endif
 
+" Indentation for file types
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
 " Remaps
 nnoremap <Leader>hl :set hlsearch<CR>
 nnoremap <Leader>nhl :set nohlsearch<CR>
@@ -195,12 +204,15 @@ nnoremap <Leader>num :set number relativenumber<CR>
 nnoremap <Leader>nnum :set nonumber norelativenumber<CR>
 nnoremap <Leader>* *N
 nnoremap <Leader># #N
+" Highlight current column
+nnoremap <Leader>hc :exe ':set colorcolumn+=' . col('.')<CR>
+" Remove additional highlighted columns
+nnoremap <Leader>nhc :set colorcolumn=80,120<CR>
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 " Spelling check
 nnoremap <Leader>spe :spell<CR>
 nnoremap <Leader>nspe :nospell<CR>
-
 
 " No arrow keys
 noremap <Up> <Nop>
