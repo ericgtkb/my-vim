@@ -8,6 +8,9 @@ call vundle#begin()
 " Let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 
+" Indent line
+Plugin 'yggdroot/indentline'
+
 " Syntastic
 Plugin 'vim-syntastic/syntastic'
 
@@ -41,6 +44,12 @@ Plugin 'pangloss/vim-javascript'
 " Python syntax
 Plugin 'maxmellon/vim-jsx-pretty'
 
+"Typescript
+Plugin 'herringtondarkholme/yats.vim'
+
+" Csv
+Plugin 'chrisbra/csv.vim'
+
 call vundle#end()
 filetype plugin indent on
 " End Vundle setup
@@ -53,6 +62,10 @@ filetype plugin indent on
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
 
+" Indent line settings
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+let g:syntastic_mode_map = {'mode': 'passive'}
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
@@ -110,6 +123,10 @@ let g:cpp_experimental_simple_template_highlight = 1
 " Python syntax settings
 let g:python_highlight_all = 1
 " End Python syntax settings
+
+" Csv settings
+let g:csv_delim_test = ', 	|'
+" End Csv settings
 
 " End plugin settings
 
@@ -210,6 +227,10 @@ nnoremap <Leader>hc :exe ':set colorcolumn+=' . col('.')<CR>
 nnoremap <Leader>nhc :set colorcolumn=80,120<CR>
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+" json formatting
+nnoremap <Leader>json :%!python3 -m json.tool<CR>
+" csv color and settings
+nnoremap <Leader>csv :set ft=csv \| set colorcolumn= \| IndentLinesToggle<CR>
 " Spelling check
 nnoremap <Leader>spe :spell<CR>
 nnoremap <Leader>nspe :nospell<CR>
