@@ -64,6 +64,8 @@ filetype plugin indent on
 
 " Indent line settings
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:vim_json_conceal = 0
+let g:markdown_syntax_conceal = 0
 
 let g:syntastic_mode_map = {'mode': 'passive'}
 " let g:syntastic_always_populate_loc_list = 1
@@ -228,7 +230,7 @@ nnoremap <Leader>nhc :set colorcolumn=80,120<CR>
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 " json formatting
-nnoremap <Leader>json :%!python3 -m json.tool<CR>
+nnoremap <Leader>json :%!python3 -m json.tool --indent 2<CR>
 " csv color and settings
 nnoremap <Leader>csv :set ft=csv \| set colorcolumn= \| IndentLinesToggle<CR>
 " Spelling check
