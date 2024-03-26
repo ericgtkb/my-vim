@@ -35,6 +35,9 @@ Plugin 'flazz/vim-colorschemes'
 " C++ syntax
 Plugin 'octol/vim-cpp-enhanced-highlight'
 
+" Java syntax
+Plugin 'uiiaoo/java-syntax.vim'
+
 " Python syntax
 Plugin 'vim-python/python-syntax'
 
