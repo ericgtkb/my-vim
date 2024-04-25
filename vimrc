@@ -169,7 +169,11 @@ set splitright
 " No resizing after closing a split
 set noequalalways
 
-set clipboard=unnamedplus
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
 
 " Whether to disable mouse
 set mouse=
