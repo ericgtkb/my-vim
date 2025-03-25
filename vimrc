@@ -1,109 +1,76 @@
-set nocompatible
-filetype off
+call plug#begin()
 
-" Vundle setup
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
+" CoC
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Indent line
-Plugin 'yggdroot/indentline'
-
-" Syntastic
-Plugin 'vim-syntastic/syntastic'
-
-" YouCompleteMe
-Plugin 'ycm-core/YouCompleteMe'
+Plug 'yggdroot/indentline'
 
 " Fast surround with any character
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Allow . to repeat mappings
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 
 " Pair insertion
-Plugin 'raimondi/delimitmate'
+Plug 'raimondi/delimitmate'
 
 " Airline
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 
 " Color schemes
-Plugin 'flazz/vim-colorschemes'
+Plug 'flazz/vim-colorschemes'
 
 " C++ syntax
-Plugin 'octol/vim-cpp-enhanced-highlight'
+Plug 'octol/vim-cpp-enhanced-highlight'
 
 " Java syntax
-Plugin 'uiiaoo/java-syntax.vim'
+Plug 'uiiaoo/java-syntax.vim'
 
 " Python syntax
-Plugin 'vim-python/python-syntax'
+Plug 'vim-python/python-syntax'
 
 " Javascript
-Plugin 'pangloss/vim-javascript'
+Plug 'pangloss/vim-javascript'
 
 " Python syntax
-Plugin 'maxmellon/vim-jsx-pretty'
+Plug 'maxmellon/vim-jsx-pretty'
 
 "Typescript
-Plugin 'herringtondarkholme/yats.vim'
+Plug 'herringtondarkholme/yats.vim'
 
 " Csv
-Plugin 'chrisbra/csv.vim'
+Plug 'chrisbra/csv.vim'
 
-call vundle#end()
+call plug#end()
+
+set nocompatible
 filetype plugin indent on
-" End Vundle setup
-
 
 " Plugin settings
-" Syntastic settings
-" These should be disabled when using Airline
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+
+" Import CoC settings
+try 
+  source ~/.vim/coc-config.vim
+  let g:coc_global_extensions = [
+      \ 'coc-json',
+      \ 'coc-yaml',
+      \ 'coc-clangd',
+      \ 'coc-java',
+      \ 'coc-pyright',
+      \ 'coc-tsserver',
+      \ 'coc-go',
+      \ 'coc-markdownlint',
+      \ ]
+catch
+  " No coc config.
+endtry 
 
 " Indent line settings
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:vim_json_conceal = 0
 let g:markdown_syntax_conceal = 0
 
-let g:syntastic_mode_map = {'mode': 'passive'}
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" Use YCM for java
-let g:syntastic_java_checkers = []
-let g:syntastic_python_checkers = ['flake8', 'mypy']
-let g:syntastic_python_flake8_args = '--ignore=E501,W503'
-let g:syntastic_python_mypy_args = '--ignore-missing-imports'
-let g:syntastic_aggregate_errors = 1
-" Syntastic mappings
-nnoremap <Leader>stm :SyntasticToggleMode<CR>
-nnoremap <Leader>sc :SyntasticCheck<CR>
-nnoremap <Leader>sr :SyntasticReset<CR>
-" End Syntastic settings
-
-" YCM settings
-let g:ycm_auto_trigger = 1
-let g:ycm_goto_buffer_command = 'new-tab' 
-let g:ycm_always_populate_location_list = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-
-" YCM mappings
-nnoremap <Leader>yon :let g:ycm_show_diagnostics_ui = 1 \| set signcolumn=auto \| YcmRestartServer<CR>:e<CR>
-nnoremap <Leader>yoff :let g:ycm_show_diagnostics_ui = 0 \| set signcolumn=no \| YcmRestartServer<CR>:e<CR>
-nnoremap <Leader>yg :YcmCompleter GoTo<CR>
-nnoremap <Leader>yf :YcmCompleter FixIt<CR>
-nnoremap <Leader>ydoc :YcmCompleter GetDoc<CR>
-nnoremap <Leader>yrr :YcmCompleter RefactorRename<Space>
-" Java only
-nnoremap <Leader>yoi :YcmCompleter OrganizeImports<CR>
-" End YCM settings
 
 " DelimitMate settings
 let g:delimitMate_expand_cr = 1
@@ -134,7 +101,6 @@ let g:csv_delim_test = ', 	|'
 " End Csv settings
 
 " End plugin settings
-
 
 " My settings
 syntax on
