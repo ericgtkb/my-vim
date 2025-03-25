@@ -186,6 +186,7 @@ autocmd BufReadPost *
 
 " Indentation for file types
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 
 " Remaps
 nnoremap <Leader>hl :set hlsearch<CR>
