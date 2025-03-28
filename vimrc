@@ -42,10 +42,33 @@ Plug 'herringtondarkholme/yats.vim'
 " Csv
 Plug 'chrisbra/csv.vim'
 
+" Copilot
+Plug 'github/copilot.vim'
+
+" nvim only plugings
+if has('nvim')
+  " For CopilotChat
+  Plug 'nvim-lua/plenary.nvim'
+  " CopilotChat
+  Plug 'CopilotC-Nvim/CopilotChat.nvim'
+endif
+
 call plug#end()
 
 set nocompatible
 filetype plugin indent on
+
+" Non shared settings
+if has('nvim')
+  " nvim only options
+  colorscheme flattr
+else
+  " vim only options
+  set ttymouse=
+  set termwinsize=15*0
+
+  colorscheme lettuce
+endif
 
 " Plugin settings
 
@@ -100,6 +123,10 @@ let g:python_highlight_all = 1
 let g:csv_delim_test = ', 	|'
 " End Csv settings
 
+" Copilot
+imap <silent><script><expr> <leader><CR> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
 " End plugin settings
 
 " My settings
@@ -143,9 +170,6 @@ endif
 
 " Whether to disable mouse
 set mouse=
-set ttymouse=
-
-set termwinsize=15*0
 
 " Enable omni completion
 set omnifunc=syntaxcomplete#Complete
@@ -155,8 +179,6 @@ set backspace=indent,eol,start
 
 " Dealing with the delay of <Esc> O
 set timeout timeoutlen=5000 ttimeoutlen=100
-
-colorscheme lettuce
 
 set cursorline
 set cursorcolumn
