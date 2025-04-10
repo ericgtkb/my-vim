@@ -18,9 +18,6 @@ Plug 'raimondi/delimitmate'
 " Airline
 Plug 'vim-airline/vim-airline'
 
-" Color schemes
-Plug 'flazz/vim-colorschemes'
-
 " C++ syntax
 Plug 'octol/vim-cpp-enhanced-highlight'
 
@@ -45,12 +42,23 @@ Plug 'chrisbra/csv.vim'
 " Copilot
 Plug 'github/copilot.vim'
 
-" nvim only plugings
 if has('nvim')
+  " nvim only plugings
+  " Color schemes
+  Plug 'folke/tokyonight.nvim'
+  Plug 'rebelot/kanagawa.nvim'
+  Plug 'EdenEast/nightfox.nvim'
+  Plug 'projekt0n/github-nvim-theme'
+
   " For CopilotChat
   Plug 'nvim-lua/plenary.nvim'
+
   " CopilotChat
   Plug 'CopilotC-Nvim/CopilotChat.nvim'
+else
+  " vim only plugins
+  " Color schemes
+  Plug 'flazz/vim-colorschemes'
 endif
 
 call plug#end()
@@ -61,7 +69,7 @@ filetype plugin indent on
 " Non shared settings
 if has('nvim')
   " nvim only options
-  colorscheme flattr
+  colorscheme carbonfox
 else
   " vim only options
   set ttymouse=

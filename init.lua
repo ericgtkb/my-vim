@@ -1,4 +1,4 @@
 vim.cmd('source ~/.vim/vimrc')
 
-require("CopilotChat").setup {
+require('CopilotChat').setup {
 }
