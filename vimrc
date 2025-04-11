@@ -69,7 +69,7 @@ filetype plugin indent on
 " Non shared settings
 if has('nvim')
   " nvim only options
-  colorscheme carbonfox
+  colorscheme kanagawa-wave
 else
   " vim only options
   set ttymouse=
