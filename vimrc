@@ -50,6 +50,11 @@ if has('nvim')
   Plug 'EdenEast/nightfox.nvim'
   Plug 'projekt0n/github-nvim-theme'
 
+  " Nerd fonts
+  Plug 'nvim-tree/nvim-web-devicons'
+  " File explorer
+  Plug 'nvim-tree/nvim-tree.lua'
+
   " For CopilotChat
   Plug 'nvim-lua/plenary.nvim'
 
@@ -59,6 +64,9 @@ else
   " vim only plugins
   " Color schemes
   Plug 'flazz/vim-colorschemes'
+
+  " Nerd fonts
+  Plug 'ryanoasis/vim-devicons'
 endif
 
 call plug#end()
