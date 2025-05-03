@@ -30,11 +30,14 @@ Plug 'vim-python/python-syntax'
 " Javascript
 Plug 'pangloss/vim-javascript'
 
-" Python syntax
+" JSX syntax
 Plug 'maxmellon/vim-jsx-pretty'
 
-"Typescript
+" Typescript
 Plug 'herringtondarkholme/yats.vim'
+
+" Go
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 
 " Csv
 Plug 'chrisbra/csv.vim'
