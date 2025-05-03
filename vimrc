@@ -67,6 +67,15 @@ else
 
   " Nerd fonts
   Plug 'ryanoasis/vim-devicons'
+
+  " Nerd tree
+  Plug 'preservim/nerdtree'
+
+  " Nerd tree color icons
+  Plug 'lambdalisue/vim-glyph-palette'
+
+  " CopilotChat
+  Plug 'DanBradbury/copilot-chat.vim'
 endif
 
 call plug#end()
@@ -84,6 +93,14 @@ else
   set termwinsize=15*0
 
   colorscheme lettuce
+
+  " Enable nerd tree color icons
+  augroup my-glyph-palette
+    autocmd! *
+    autocmd FileType fern call glyph_palette#apply()
+    autocmd FileType fall-list call glyph_palette#apply()
+    autocmd FileType nerdtree,startify call glyph_palette#apply()
+  augroup END
 endif
 
 " Plugin settings
