@@ -90,6 +90,17 @@ filetype plugin indent on
 if has('nvim')
   " nvim only options
   colorscheme kanagawa-wave
+
+  " Terminal size
+  autocmd TermOpen * resize 15
+
+  " Mappings
+  " Make nvim terminal behave like vim
+  tnoremap <C-w>N <C-\><C-n>
+  tnoremap <C-w>h <C-\><C-n><C-w>h
+  tnoremap <C-w>j <C-\><C-n><C-w>j
+  tnoremap <C-w>k <C-\><C-n><C-w>k
+  tnoremap <C-w>l <C-\><C-n><C-w>l
 else
   " vim only options
   set ttymouse=
@@ -244,7 +255,9 @@ autocmd BufReadPost *
 
 " Indentation for file types
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
-autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+" vim-go hadles tab indentation, uncomment for lager tab size.
+" autocmd FileType go setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
+
 
 " Remaps
 nnoremap <Leader>hl :set hlsearch<CR>
