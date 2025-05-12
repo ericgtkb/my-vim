@@ -9,5 +9,8 @@
     }
   },
   "suggest.noselect": true,
-  "pyright.testing.provider": "pytest"
+  "pyright.testing.provider": "pytest",
+  "pyright.inlayHints.functionReturnTypes": false,
+  "pyright.inlayHints.variableTypes": false,
+  "pyright.inlayHints.parameterTypes": false
 }
