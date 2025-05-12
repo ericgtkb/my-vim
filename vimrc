@@ -39,9 +39,6 @@ Plug 'herringtondarkholme/yats.vim'
 " Go
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 
-" Csv
-Plug 'chrisbra/csv.vim'
-
 " Copilot
 Plug 'github/copilot.vim'
 
