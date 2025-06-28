@@ -55,6 +55,14 @@ if has('nvim')
   " File explorer
   Plug 'nvim-tree/nvim-tree.lua'
 
+  " Debug Adapter Protocol
+  Plug 'mfussenegger/nvim-dap'
+  Plug 'nvim-neotest/nvim-nio'
+  Plug 'rcarriga/nvim-dap-ui'
+
+  "Debugger languages
+  Plug 'mfussenegger/nvim-dap-python'
+
   " For CopilotChat
   Plug 'nvim-lua/plenary.nvim'
 
@@ -127,6 +135,7 @@ try
       \ 'coc-pyright',
       \ 'coc-tsserver',
       \ 'coc-go',
+      \ 'coc-rust-analyzer',
       \ 'coc-markdownlint',
       \ ]
 catch
@@ -261,8 +270,8 @@ nnoremap <Leader>hl :set hlsearch<CR>
 nnoremap <Leader>nhl :set nohlsearch<CR>
 nnoremap <Leader>ic :set ignorecase<CR>
 nnoremap <Leader>nic :set noignorecase<CR>
-nnoremap <Leader>num :set number relativenumber \| IndentLinesToggle<CR>
-nnoremap <Leader>nnum :set nonumber norelativenumber \| IndentLinesToggle<CR>
+nnoremap <Leader>num :set number relativenumber signcolumn=yes \| IndentLinesToggle<CR>
+nnoremap <Leader>nnum :set nonumber norelativenumber signcolumn=no \| IndentLinesToggle<CR>
 nnoremap <Leader>* *N
 nnoremap <Leader># #N
 " Highlight current column
