@@ -12,5 +12,10 @@
   "pyright.testing.provider": "pytest",
   "pyright.inlayHints.functionReturnTypes": false,
   "pyright.inlayHints.variableTypes": false,
-  "pyright.inlayHints.parameterTypes": false
+  "pyright.inlayHints.parameterTypes": false,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
+  "rust-analyzer.inlayHints.closingBraceHints.enable": false,
+  "rust-analyzer.inlayHints.genericParameterHints.const.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false
 }
