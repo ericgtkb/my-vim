@@ -15,6 +15,4 @@ if not is_vscode then
 
   }
 
-  require('CopilotChat').setup {
-  }
 end

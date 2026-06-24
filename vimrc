@@ -12,8 +12,6 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 " Allow . to repeat mappings
 Plug 'tpope/vim-repeat'
-" Pair insertion
-Plug 'raimondi/delimitmate'
 
 " Syntax plugins - safe to keep in VSCode as well
 " C++ syntax
@@ -29,12 +27,13 @@ Plug 'maxmellon/vim-jsx-pretty'
 " Typescript
 Plug 'herringtondarkholme/yats.vim'
 
-
 " Common for Vim and Neovim but not VSCode
 if !s:is_vscode
   " CoC
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+  " Pair insertion
+  Plug 'raimondi/delimitmate'
   " Indent line
   Plug 'yggdroot/indentline'
   " Airline
@@ -43,8 +42,6 @@ if !s:is_vscode
   " Go - in VSCode use the Go extension instead
   Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 
-  " Copilot
-  Plug 'github/copilot.vim'
 else
   " VSCode-only plugins - most likely none
 endif
@@ -62,10 +59,6 @@ if s:is_nvim && !s:is_vscode
   " File explorer
   Plug 'nvim-tree/nvim-tree.lua'
 
-  " For CopilotChat
-  Plug 'nvim-lua/plenary.nvim'
-  " CopilotChat
-  Plug 'CopilotC-Nvim/CopilotChat.nvim'
 endif
 
 " Vim-only
@@ -79,8 +72,6 @@ if s:is_vim
   " Nerd tree color icons
   Plug 'lambdalisue/vim-glyph-palette'
 
-  " CopilotChat
-  Plug 'DanBradbury/copilot-chat.vim'
 endif
 
 call plug#end()
@@ -236,8 +227,8 @@ if !s:is_vscode
   let g:markdown_syntax_conceal = 0
 
   " Copilot
-  imap <silent><script><expr> <leader><CR> copilot#Accept("\<CR>")
-  let g:copilot_no_tab_map = v:true
+  " imap <silent><script><expr> <leader><CR> copilot#Accept("\<CR>")
+  " let g:copilot_no_tab_map = v:true
 endif
 
 " DelimitMate settings
